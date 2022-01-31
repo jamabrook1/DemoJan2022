@@ -38,6 +38,19 @@
 		<artifactId>selenium-api</artifactId>
 		<version>4.1.1</version>
 	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>5.2.0</version>
+</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>5.2.0</version>
+</dependency>
+	
 	
 </dependencies>
 	
@@ -79,7 +92,25 @@
 			</pluginManagement>
 		</build>
 	</profile>
-</profiles>
+	<profile>
+		<id>Demo_Profile</id>
+		<build>
+			<pluginManagement>
+				<plugins>
+					<plugin>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.22.1</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>Testing.xml</suiteXmlFile>
+							</suiteXmlFiles>
+						</configuration>
+					</plugin>
+				</plugins>
+			</pluginManagement>
+		</build>
+	</profile>
+	</profiles>
 
 	
 </project>
